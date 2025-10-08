@@ -164,7 +164,7 @@ const CONFIG = {
       journalName: '',
       authors: 'Carolin Kroh',
         description:
-          'Purpose: Comparative analysis of the role of mobile payment systems in China and Germany, focusing on the platforms Alipay and PayPal.\n\nBody: Examination of digital infrastructure, market behavior, app functionalities, and global reach of both systems; includes critical discussion and forward-looking perspective with an emphasis on artificial intelligence.\n\nFindings: Mobile payments are significantly more widespread in China due to superior infrastructure and greater digital openness; Alipay offers a broader range of additional functionalities compared to PayPal; AI is expected to play a central role in the future of mobile payment systems.',
+          'Objective: Comparative analysis of the role of mobile payment systems in China and Germany, focusing on the platforms Alipay and PayPal.\n\nAnalysis: Examination of digital infrastructure, market behavior, app functionalities, and global reach of both systems; includes critical discussion and forward-looking perspective with an emphasis on artificial intelligence.\n\nResults: Mobile payments are significantly more widespread in China due to superior infrastructure and greater digital openness; Alipay offers a broader range of additional functionalities compared to PayPal; AI is expected to play a central role in the future of mobile payment systems.',
     },
   ],
   // Display articles from your medium or dev account. (Optional)

@@ -75,14 +75,8 @@ const PublicationCard = ({
   };
 
   const renderPublications = () => {
-    return publications.map((item, index) => (
-      <a
-        className="card shadow-md card-sm bg-base-100 cursor-pointer"
-        key={index}
-        href={item.link}
-        target="_blank"
-        rel="noreferrer"
-      >
+    return publications.map((item, index) => {
+      const content = (
         <div className="p-8 h-full w-full">
           <div className="flex items-center flex-col">
             <div className="w-full">
@@ -118,8 +112,32 @@ const PublicationCard = ({
             </div>
           </div>
         </div>
-      </a>
-    ));
+      );
+
+      // If item has a link, make it clickable, otherwise just display as div
+      if (item.link) {
+        return (
+          <a
+            className="card shadow-md card-sm bg-base-100 cursor-pointer"
+            key={index}
+            href={item.link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {content}
+          </a>
+        );
+      } else {
+        return (
+          <div
+            className="card shadow-md card-sm bg-base-100"
+            key={index}
+          >
+            {content}
+          </div>
+        );
+      }
+    });
   };
 
   return (
