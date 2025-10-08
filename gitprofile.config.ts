@@ -2,22 +2,21 @@
 
 const CONFIG = {
   github: {
-    username: 'ck130500', // Your GitHub org/user name. (This is the only required config)
+    username: 'ck130500', 
   },
-  /**
-   * If you are deploying to https://<USERNAME>.github.io/, for example your repository is at https://github.com/arifszn/arifszn.github.io, set base to '/'.
-   * If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/,
-   * for example your repository is at https://github.com/arifszn/portfolio, then set base to '/portfolio/'.
-   */
+  // Custom profile image (optional - if not set, GitHub avatar will be used)
+  customAvatar: '/Passfoto alt.jpg',
+  // Custom description text under the avatar
+  customDescription: 'Multilingual Master\'s student in Digital Business Management with expertise in process optimization, digital business model development, and intercultural competence. Experienced with the Microsoft Power Platform and particularly interested in IT management and low-code technologies.',
   base: '/',
   projects: {
     github: {
-      display: true, // Display GitHub projects?
-      header: 'Github Profile',
+      display: true, 
+      header: 'Github Project',
       mode: 'manual', // Mode can be: 'automatic' or 'manual'
       automatic: {
         sortBy: 'stars', // Sort projects by 'stars' or 'updated'
-        limit: 8, // How many projects to display.
+        limit: 2, // How many projects to display.
         exclude: {
           forks: false, // Forked projects will not be displayed if set to true.
           projects: [], // These projects will not be displayed. example: ['arifszn/my-project1', 'arifszn/my-project2']
@@ -25,28 +24,30 @@ const CONFIG = {
       },
       manual: {
         // Properties for manually specifying projects
-        projects: ['ck130500/gitprofile'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: ['ck130500/ck130500.github.io'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
     external: {
-      header: 'My Projects',
+      header: 'University Projects',
       // To hide the `External Projects` section, keep it empty.
       projects: [
         {
-          title: 'Hello World',
+          title: 'Shopware Website - FitFuel',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+            'FitFuel is a mockup website for a personalized health and nutrition supplement platform. The prototype allows users to complete a health quiz about their lifestyle, wellness goals, and preferences. Based on the results, the platform suggests a tailored supplement plan and offers subscription options for regular deliveries.\n\nKey Features:\n\n• Quiz-based supplement recommendations\n\n• Personalized subscription model\n\n• Broad product range (vitamins, proteins, immune support)\n\n• Focus on user experience and digital health personalization\n\n💻 Feel free to visit our project website: marketmakers.hofstars.de',
           imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
+            '/FitFuel Logo.png',
+          link: 'https://marketmakers.hofstars.de/',
         },
         {
-          title: 'Project Name',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-          imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
+          title: 'Event App',
+          description: 'The Event App project was developed as part of the Master\'s program in Digital Business Management in collaboration with the German Armed Forces (Bundeswehr). Its goal was to create a digital solution for the "Day of the Bundeswehr 2025" event in Greding, Germany. The app served as an interactive information and navigation tool, providing visitors with event details, real-time updates, and a digital scavenger hunt to enhance engagement and improve the overall visitor experience.',
+          imageUrls: [
+            '/IMG_20251009_040745.jpg',
+            '/Screenshot_2025-06-28-15-33-03-622_com.touchart.eventee.jpg',
+            '/pic1.png',
+            '/Screenshot_2025-07-18-16-18-44-521_com.android.chrome.jpg'
+          ],
         },
       ],
     },
@@ -58,7 +59,7 @@ const CONFIG = {
     mastodon: '',
     researchGate: '',
     facebook: '',
-    instagram: '',
+    instagram: 'carolin.kroh',
     reddit: '',
     threads: '',
     youtube: '', // example: 'pewdiepie'
@@ -71,91 +72,105 @@ const CONFIG = {
     discord: '',
     telegram: '',
     website: '',
-    phone: '',
-    email: 'carolin.kroh@gmail.com',
+    phone: '+8210-8295-1857',
+    email: 'carolin.kroh@googlemail.com',
   },
   resume: {
     fileUrl:
-      '/assets/Lebenslauf_Carolin%20Kroh.pdf', // Empty fileUrl will hide the `Download Resume` button.
+      '/Lebenslauf_Carolin Kroh.pdf', // Path to your resume PDF in the public folder
   },
   skills: [
-    'PHP',
-    'Laravel',
-    'JavaScript',
-    'React.js',
-    'Node.js',
-    'Nest.js',
-    'MySQL',
-    'PostgreSQL',
-    'Git',
-    'Docker',
-    'PHPUnit',
-    'CSS',
-    'Antd',
-    'Tailwind',
+    // Office & Design Tools
+    'MS Office (PowerPoint, Word, Excel, Outlook)',
+    'Canva',
+
+    // Power Platform & Automation
+    'MS Power Apps',
+    'MS Power Automate',
+    'Power Platform Agents',
+    'UiPath',
+    'Make',
+    'Celonis',
+
+    // BI & Data Analysis Tools
+    'MS Power BI',
+    'Tableau',
+    'Signavio',
+
+    // Process & Project Management
+    'Business Process Management',
+    'Process Optimization',
+    'Agile Project Management',
+    'Low-Code / No-Code Development',
+    'Data Analysis',
   ],
   experiences: [
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'September 2021',
+      company: 'GEALAN Fenster-Systeme GmbH',
+      position: 'Working Student in IT Demand Management',
+      from: 'January 2025',
       to: 'Present',
-      companyLink: 'https://example.com',
+      companyLink: 'https://www.gealan.de/',
+      description: 'Process digitalization using MS Power Apps & Power Automate.',
     },
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'July 2019',
-      to: 'August 2021',
-      companyLink: 'https://example.com',
+      company: 'Mercedes-Benz Vans',
+      position: 'Intern in HR Business Partner Marketing & Sales',
+      from: 'March 2022',
+      to: 'August 2022',
+      companyLink: 'https://www.mercedes-benz-vans.com/',
+    },
+    {
+      company: 'REMONDIS Mitteldeutschland GmbH',
+      position: 'Accounting Assistant',
+      from: 'April 2016',
+      to: 'September 2021',
+      companyLink: 'https://www.remondis.de/',
     },
   ],
   certifications: [
     {
-      name: 'Lorem ipsum',
-      body: 'Lorem ipsum dolor sit amet',
-      year: 'March 2022',
-      link: 'https://example.com',
+      name: 'Chinese Language Proficiency HSK 4',
+      body: 'Completed intensive and standard Chinese language program at East China Normal University during au-pair in Shanghai.',
+      year: '2018-2019',
+      link: '',
     },
   ],
   educations: [
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2015',
-      to: '2019',
+      institution: 'Hochschule Hof – University of Applied Sciences',
+      degree: 'M.Sc. Digital Business Management',
+      from: 'October 2024',
+      to: 'Present',
     },
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2012',
-      to: '2014',
+      institution: 'Hochschule für Technik, Wirtschaft und Gestaltung Konstanz',
+      degree: 'B.A. Business Languages Asia & Management China',
+      from: 'September 2019',
+      to: 'April 2024',
+    },
+    {
+      institution: 'Goethegymnasium Weißenfels',
+      degree: 'General Higher Education Entrance Qualification (Abitur)',
+      from: 'August 2010',
+      to: 'July 2018',
+      description: 'Final grade: 1.8',
     },
   ],
   publications: [
     {
-      title: 'Publication Title',
+      title: 'A case study of mobile payment platforms in China and Germany',
       conferenceName: '',
-      journalName: 'Journal Name',
-      authors: 'John Doe, Jane Smith',
-      link: 'https://example.com',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    },
-    {
-      title: 'Publication Title',
-      conferenceName: 'Conference Name',
       journalName: '',
-      authors: 'John Doe, Jane Smith',
-      link: 'https://example.com',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      authors: 'Carolin Kroh',
+        description:
+          'Purpose: Comparative analysis of the role of mobile payment systems in China and Germany, focusing on the platforms Alipay and PayPal.\n\nBody: Examination of digital infrastructure, market behavior, app functionalities, and global reach of both systems; includes critical discussion and forward-looking perspective with an emphasis on artificial intelligence.\n\nFindings: Mobile payments are significantly more widespread in China due to superior infrastructure and greater digital openness; Alipay offers a broader range of additional functionalities compared to PayPal; AI is expected to play a central role in the future of mobile payment systems.',
     },
   ],
   // Display articles from your medium or dev account. (Optional)
   blog: {
     source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
+    username: '', // to hide blog section, keep it empty
     limit: 2, // How many articles to display. Max is 10.
   },
   googleAnalytics: {
@@ -164,7 +179,7 @@ const CONFIG = {
   // Track visitor interaction and behavior. https://www.hotjar.com
   hotjar: { id: '', snippetVersion: 6 },
   themeConfig: {
-    defaultTheme: 'lofi',
+    defaultTheme: 'corporate',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode

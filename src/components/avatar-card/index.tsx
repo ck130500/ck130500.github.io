@@ -8,6 +8,7 @@ interface AvatarCardProps {
   loading: boolean;
   avatarRing: boolean;
   resumeFileUrl?: string;
+  customDescription?: string;
 }
 
 /**
@@ -16,6 +17,7 @@ interface AvatarCardProps {
  * @param loading - A boolean indicating if the profile is loading.
  * @param avatarRing - A boolean indicating if the avatar should have a ring.
  * @param resumeFileUrl - The URL of the resume file.
+ * @param customDescription - Custom description text to display under the avatar.
  * @returns JSX element representing the AvatarCard.
  */
 const AvatarCard: React.FC<AvatarCardProps> = ({
@@ -23,6 +25,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
   loading,
   avatarRing,
   resumeFileUrl,
+  customDescription,
 }): React.JSX.Element => {
   return (
     <div className="card shadow-lg card-sm bg-base-100">
@@ -76,6 +79,13 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
               : profile.bio}
           </div>
         </div>
+        {customDescription && (
+          <div className="mt-6 mx-auto px-8 text-left w-full">
+            <p className="text-base-content opacity-80 text-sm leading-relaxed">
+              {customDescription}
+            </p>
+          </div>
+        )}
         {resumeFileUrl &&
           (loading ? (
             <div className="mt-6">

@@ -97,7 +97,25 @@ const ExternalProjectCard = ({
                   <h2 className="font-medium text-center opacity-60 mb-2">
                     {item.title}
                   </h2>
-                  {item.imageUrl && (
+                  {(item.imageUrls && item.imageUrls.length > 0) ? (
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      {item.imageUrls.slice(0, 4).map((imageUrl, imgIndex) => (
+                        <div key={imgIndex} className="avatar opacity-90">
+                          <div className="w-36 h-56 rounded-lg">
+                            <LazyImage
+                              src={imageUrl}
+                              alt={`${item.title} - Image ${imgIndex + 1}`}
+                              placeholder={skeleton({
+                                widthCls: 'w-full',
+                                heightCls: 'h-full',
+                                shape: '',
+                              })}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : item.imageUrl ? (
                     <div className="avatar opacity-90">
                       <div className="w-24 h-24 mask mask-squircle">
                         <LazyImage
@@ -111,10 +129,18 @@ const ExternalProjectCard = ({
                         />
                       </div>
                     </div>
-                  )}
-                  <p className="mt-2 text-base-content text-sm text-justify">
-                    {item.description}
-                  </p>
+                  ) : null}
+                  <div className="mt-2 text-base-content text-sm text-justify">
+                    {item.description && item.description.split('\n').map((paragraph, index) => {
+                      // Check if this is a bullet point line
+                      const isBulletPoint = paragraph.trim().startsWith('•');
+                      return (
+                        <p key={index} className={`${index > 0 ? 'mt-3' : ''} ${isBulletPoint ? 'pl-4' : ''}`}>
+                          {paragraph}
+                        </p>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>

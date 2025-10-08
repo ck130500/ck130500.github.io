@@ -105,7 +105,7 @@ const GitProfile = ({ config }: { config: Config }) => {
       const data = response.data;
 
       setProfile({
-        avatar: data.avatar_url,
+        avatar: sanitizedConfig.customAvatar || data.avatar_url,
         name: data.name || ' ',
         bio: data.bio || '',
         location: data.location || '',
@@ -204,6 +204,7 @@ const GitProfile = ({ config }: { config: Config }) => {
                     loading={loading}
                     avatarRing={sanitizedConfig.themeConfig.displayAvatarRing}
                     resumeFileUrl={sanitizedConfig.resume.fileUrl}
+                    customDescription={sanitizedConfig.customDescription}
                   />
                   <DetailsCard
                     profile={profile}

@@ -105,9 +105,13 @@ const PublicationCard = ({
                     </p>
                   )}
                   {item.description && (
-                    <p className="mt-2 text-base-content text-sm text-justify">
-                      {item.description}
-                    </p>
+                    <div className="mt-2 text-base-content text-sm text-justify">
+                      {item.description.split('\n').map((paragraph, index) => (
+                        <p key={index} className={index > 0 ? 'mt-3' : ''}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
                   )}
                 </div>
               </div>
@@ -150,7 +154,7 @@ const PublicationCard = ({
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className={`grid gap-6 ${publications.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'}`}>
               {loading ? renderSkeleton() : renderPublications()}
             </div>
           </div>

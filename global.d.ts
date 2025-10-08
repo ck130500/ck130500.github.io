@@ -79,6 +79,7 @@ interface ExternalProjects {
     title: string;
     description?: string;
     imageUrl?: string;
+    imageUrls?: string[];
     link: string;
   }[];
 }
@@ -316,6 +317,16 @@ interface Config {
    * GitHub config
    */
   github: Github;
+
+  /**
+   * Custom profile avatar (optional - if not set, GitHub avatar will be used)
+   */
+  customAvatar?: string;
+
+  /**
+   * Custom description text under the avatar
+   */
+  customDescription?: string;
 
   /**
    * Vite's base url

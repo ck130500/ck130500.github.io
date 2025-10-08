@@ -2,6 +2,10 @@ export interface SanitizedGithub {
   username: string;
 }
 
+export interface SanitizedCustomAvatar {
+  customAvatar?: string;
+}
+
 export interface SanitizedGitHubProjects {
   display: boolean;
   header: string;
@@ -23,6 +27,7 @@ export interface SanitizedExternalProject {
   title: string;
   description?: string;
   imageUrl?: string;
+  imageUrls?: string[];
   link: string;
 }
 
@@ -126,6 +131,8 @@ export interface SanitizedThemeConfig {
 
 export interface SanitizedConfig {
   github: SanitizedGithub;
+  customAvatar?: string;
+  customDescription?: string;
   projects: SanitizedProjects;
   seo: SanitizedSEO;
   social: SanitizedSocial;
